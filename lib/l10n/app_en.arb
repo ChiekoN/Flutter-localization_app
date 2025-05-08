@@ -1,0 +1,6 @@
+{
+  "toplistTitle": "Upcoming dates",
+  "@toplistTitle": {
+    "description": "Title on AppBar in Toplist page"
+  }
+}
