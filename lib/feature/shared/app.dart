@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 import 'router.dart';
 import '../../l10n/app_localizations.dart';
@@ -13,8 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
-      locale: Locale('ja'), // TODO: Switch here to change locale
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      locale: Locale('en'), // TODO: Switch here to change locale
+      localizationsDelegates: AppLocalizations.localizationsDelegates + [LocaleNamesLocalizationsDelegate()],
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(
         // This is the theme of your application.

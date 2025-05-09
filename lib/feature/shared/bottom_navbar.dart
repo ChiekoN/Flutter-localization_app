@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'router.dart';
 import '../../l10n/app_localizations.dart';
+import '../pages/settings/settings.dart';
 
 class ScaffoldWithBottomNavBar extends StatelessWidget {
   final int currentIndex;
@@ -37,6 +38,23 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
           pageTitle,
           //style: Theme.of(context).textTheme.headlineLarge, 
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed:
+              //context.go(AppRoutes.settings);
+              () => showDialog(
+                context: context,
+                builder:
+                  (BuildContext context) => Dialog.fullscreen(
+                    insetAnimationDuration: Duration(milliseconds: 1000),
+                    child: SettingsPage(),
+                    
+                  ),
+              ),
+            
+          )
+        ]
       ),
       body: child,
       bottomNavigationBar: NavigationBar(
