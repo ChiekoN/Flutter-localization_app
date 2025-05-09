@@ -150,7 +150,7 @@ class _NewDatePageState extends State<NewDatePage> {
             // Save button
             FilledButton(
               onPressed: (selectedDateString.isEmpty || title.isEmpty) ? null : () {_onSave(context);},
-              child: AppLocalizations.of(context)!.addSaveButton,
+              child: Text(AppLocalizations.of(context)!.addSaveButton),
             )
           ],
         ),
