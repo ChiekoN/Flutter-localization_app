@@ -26,11 +26,8 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
     }
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
-    //String pageTitle = currentIndex == 0 ? "Upcoming event dates" : "Past event dates" ;
     String pageTitle = currentIndex == 0 ? 
       AppLocalizations.of(context)!.bottomNavbarHomeTitle : AppLocalizations.of(context)!.bottomNavbarHistoryTitle ;
 
