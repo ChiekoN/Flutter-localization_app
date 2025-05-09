@@ -1,3 +1,17 @@
 {
-    "toplistTitle": "日にちリスト"
+    "bottomNavbarHomeTitle": "予定の日付一覧",
+    "bottomNavbarHistoryTitle": "過去の日付一覧",
+    "routerHome": "ホーム",
+    "routerHistory": "履歴",
+    "toplistListEmpty": "[+]ボタンから日付を登録してください。",
+    "historyListEmpty": "まだ履歴はありません。",
+    "addHeader": "予定を登録する",
+    "addTitleLabel": "名前",
+    "addTitleHint": "何の日？",
+    "addDateLabel": "日付選択",
+    "addDateEmpty": "日付未選択",
+    "addMemoHint": "メモを記入する（オプション）",
+    "addMemoLabel": "メモ",
+    "addSaveButton": "保存",
+    "detailMemoTitle": "メモ"
 }

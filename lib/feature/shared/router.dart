@@ -17,15 +17,15 @@ class AppRoutes {
   static const historyDetail = 'history_detail';
 }
 
-const List<NavigationDestinationRoute> destinations = [
+final List<NavigationDestinationRoute> destinations = [
   NavigationDestinationRoute(
     route: AppRoutes.home,
-    label: 'Home',
+    label: 'home',
     icon: Icon(Icons.home),
   ),
   NavigationDestinationRoute(
     route: AppRoutes.history,
-    label: 'History',
+    label: 'history',
     icon: Icon(Icons.history),
   ),
 ];

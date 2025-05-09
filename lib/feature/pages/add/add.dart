@@ -6,6 +6,9 @@ import '../../shared/router.dart';
 import '../../shared/todate_cubit.dart';
 import '../../../domain/models/todate.dart';
 
+
+import '../../../l10n/app_localizations.dart';
+
 class NewDatePage extends StatefulWidget {
   const NewDatePage({super.key});
 
@@ -88,7 +91,7 @@ class _NewDatePageState extends State<NewDatePage> {
             Padding(
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 32),
               child: Text(
-                'Add your important day!',
+                AppLocalizations.of(context)!.addHeader,
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
             ),
@@ -98,8 +101,8 @@ class _NewDatePageState extends State<NewDatePage> {
                 maxLength: 40,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Title',
-                  hintText: 'What day?',
+                  labelText: AppLocalizations.of(context)!.addTitleLabel,
+                  hintText: AppLocalizations.of(context)!.addTitleHint,
                   alignLabelWithHint: false,
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
@@ -114,12 +117,12 @@ class _NewDatePageState extends State<NewDatePage> {
                   OutlinedButton.icon(
                     onPressed: () => _selectDate(context),
                     icon: const Icon(Icons.date_range),
-                    label: const Text('Select Date'),
+                    label: Text(AppLocalizations.of(context)!.addDateLabel),
                   ),
                   Padding(
                     padding: EdgeInsets.only(left: 16.0), 
                     child: Text(
-                      selectedDateString.isEmpty ? "Not selected yet" : selectedDateString,
+                      selectedDateString.isEmpty ? AppLocalizations.of(context)!.addDateEmpty : selectedDateString,
                       style: Theme.of(context).textTheme.labelLarge,
                     ),
                   ),
@@ -135,8 +138,8 @@ class _NewDatePageState extends State<NewDatePage> {
                 minLines: 10,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  hintText: 'Add some notes (optional)',
-                  labelText: 'Memo',
+                  hintText: AppLocalizations.of(context)!.addMemoHint,
+                  labelText: AppLocalizations.of(context)!.addMemoLabel,
                   alignLabelWithHint: false,
                   floatingLabelBehavior: FloatingLabelBehavior.always,
                 ),
@@ -147,7 +150,7 @@ class _NewDatePageState extends State<NewDatePage> {
             // Save button
             FilledButton(
               onPressed: (selectedDateString.isEmpty || title.isEmpty) ? null : () {_onSave(context);},
-              child: Text('Save'),
+              child: AppLocalizations.of(context)!.addSaveButton,
             )
           ],
         ),

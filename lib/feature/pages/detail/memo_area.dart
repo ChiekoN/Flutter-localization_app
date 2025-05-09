@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../l10n/app_localizations.dart';
+
 class MemoArea extends StatelessWidget {
   const MemoArea({super.key, this.memoText});
 
@@ -15,7 +17,7 @@ class MemoArea extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 8),
             child: Text(
-              "Memo",
+              AppLocalizations.of(context)!.detailMemoTitle,
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),

@@ -14,13 +14,25 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
     required this.child
   });
 
+  String pageLabel(String label, BuildContext context) {
+    if(label == 'home') {
+      return AppLocalizations.of(context)!.routerHome;
+    }
+    else if (label == 'history') {
+      return AppLocalizations.of(context)!.routerHistory;
+    }
+    else {
+      return "DEV:ERROR"; // DEBUG
+    }
+  }
+
   
 
   @override
   Widget build(BuildContext context) {
     //String pageTitle = currentIndex == 0 ? "Upcoming event dates" : "Past event dates" ;
     String pageTitle = currentIndex == 0 ? 
-      AppLocalizations.of(context)!.toplistTitle : "Past event dates" ;
+      AppLocalizations.of(context)!.bottomNavbarHomeTitle : AppLocalizations.of(context)!.bottomNavbarHistoryTitle ;
 
     return Scaffold(
       appBar: AppBar(
@@ -35,7 +47,8 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
         destinations: destinations.map(
           (dest) => NavigationDestination(
             icon: dest.icon, 
-            label: dest.label
+            // label: dest.label
+            label: pageLabel(dest.label, context),
           )
         ).toList(),
         onDestinationSelected: (int index) {

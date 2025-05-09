@@ -1,6 +1,54 @@
 {
-  "toplistTitle": "Upcoming dates",
-  "@toplistTitle": {
-    "description": "Title on AppBar in Toplist page"
-  }
+    "bottomNavbarHomeTitle": "Upcoming dates",
+    "@bottomNavbarHomeTitle": {
+        "description": "Title on AppBar in Toplist page"
+    },
+
+    "bottomNavbarHistoryTitle": "Past dates",
+    "@bottomNavbarHistoryTitle": {
+        "description": "Title on AppBar in History page"
+    },
+
+
+    "routerHome": "Home",
+    "@routerHome": {},
+
+    "routerHistory": "History",
+    "@routerHistory": {},
+
+
+    "toplistListEmpty": "Add your first date by pressing [+].",
+    "@toplistListEmpty": {},
+
+    "historyListEmpty": "No history yet.",
+    "@historyListEmpty": {},
+
+
+    "addHeader": "Add your important day!",
+    "@addHeader": {},
+
+    "addTitleLabel": "Title",
+    "@addTitleLabel": {},
+
+    "addTitleHint": "What day?",
+    "@addTitleHint": {},
+
+    "addDateLabel": "Select Date",
+    "@addDateLabel": {},
+
+    "addDateEmpty": "Not selected yet",
+    "@addDateEmpty": {},
+
+    "addMemoHint": "Add some notes (optional)",
+    "@addMemoHint": {},
+
+    "addMemoLabel": "Memo",
+    "@addMemoLabel": {},
+
+    "addSaveButton": "Save",
+    "@addSaveButton": {},
+
+    "detailMemoTitle": "Memo",
+    "@detailMemoTitle": {}
+
 }

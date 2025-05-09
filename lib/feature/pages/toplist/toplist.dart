@@ -7,6 +7,9 @@ import '../../../domain/models/todate.dart';
 import '../../shared/todate_cubit.dart';
 //import '../../shared/classes/date_info.dart';
 
+
+import '../../../l10n/app_localizations.dart';
+
 class TopListPage extends StatefulWidget {
   const TopListPage({super.key});
 
@@ -34,7 +37,7 @@ class _TopListPageState extends State<TopListPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  "Add your first date by pressing [+].",
+                  AppLocalizations.of(context)!.toplistListEmpty,
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],

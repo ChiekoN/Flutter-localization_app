@@ -7,6 +7,8 @@ import '../../../domain/models/todate.dart';
 import '../../shared/todate_cubit.dart';
 
 
+import '../../../l10n/app_localizations.dart';
+
 class HistoryListPage extends StatefulWidget {
   const HistoryListPage({super.key});
 
@@ -34,7 +36,7 @@ class _HistoryListPageState extends State<HistoryListPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  "No history yet.",
+                  AppLocalizations.of(context)!.historyListEmpty,
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ],

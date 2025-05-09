@@ -99,7 +99,91 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'Upcoming dates'**
-  String get toplistTitle;
+  String get bottomNavbarHomeTitle;
+
+  /// Title on AppBar in History page
+  ///
+  /// In en, this message translates to:
+  /// **'Past dates'**
+  String get bottomNavbarHistoryTitle;
+
+  /// No description provided for @routerHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get routerHome;
+
+  /// No description provided for @routerHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'History'**
+  String get routerHistory;
+
+  /// No description provided for @toplistListEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your first date by pressing [+].'**
+  String get toplistListEmpty;
+
+  /// No description provided for @historyListEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No history yet.'**
+  String get historyListEmpty;
+
+  /// No description provided for @addHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Add your important day!'**
+  String get addHeader;
+
+  /// No description provided for @addTitleLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Title'**
+  String get addTitleLabel;
+
+  /// No description provided for @addTitleHint.
+  ///
+  /// In en, this message translates to:
+  /// **'What day?'**
+  String get addTitleHint;
+
+  /// No description provided for @addDateLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Date'**
+  String get addDateLabel;
+
+  /// No description provided for @addDateEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Not selected yet'**
+  String get addDateEmpty;
+
+  /// No description provided for @addMemoHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Add some notes (optional)'**
+  String get addMemoHint;
+
+  /// No description provided for @addMemoLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Memo'**
+  String get addMemoLabel;
+
+  /// No description provided for @addSaveButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get addSaveButton;
+
+  /// No description provided for @detailMemoTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Memo'**
+  String get detailMemoTitle;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
