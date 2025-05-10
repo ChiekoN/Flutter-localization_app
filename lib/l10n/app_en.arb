@@ -49,6 +49,17 @@
     "@addSaveButton": {},
 
     "detailMemoTitle": "Memo",
-    "@detailMemoTitle": {}
+    "@detailMemoTitle": {},
+
+
+    "settingsSystemDefault": "System locale",
+    "@settingsSystemDefault": {},
+
+    "settingsTitle": "Settings",
+    "@settingsTitle": {},
+
+    "settingsLanguage": "Language",
+    "@settingsLanguage" : {}
+
 
 }

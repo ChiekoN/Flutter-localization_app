@@ -52,4 +52,13 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get detailMemoTitle => 'メモ';
+
+  @override
+  String get settingsSystemDefault => 'システム設定言語';
+
+  @override
+  String get settingsTitle => '設定';
+
+  @override
+  String get settingsLanguage => '言語';
 }

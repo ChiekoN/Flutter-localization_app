@@ -184,6 +184,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Memo'**
   String get detailMemoTitle;
+
+  /// No description provided for @settingsSystemDefault.
+  ///
+  /// In en, this message translates to:
+  /// **'System locale'**
+  String get settingsSystemDefault;
+
+  /// No description provided for @settingsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// No description provided for @settingsLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settingsLanguage;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

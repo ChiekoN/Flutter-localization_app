@@ -52,4 +52,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get detailMemoTitle => 'Memo';
+
+  @override
+  String get settingsSystemDefault => 'System locale';
+
+  @override
+  String get settingsTitle => 'Settings';
+
+  @override
+  String get settingsLanguage => 'Language';
 }

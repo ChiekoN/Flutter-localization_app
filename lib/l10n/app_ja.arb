@@ -13,5 +13,9 @@
     "addMemoHint": "メモを記入する（オプション）",
     "addMemoLabel": "メモ",
     "addSaveButton": "保存",
-    "detailMemoTitle": "メモ"
+    "detailMemoTitle": "メモ",
+    "settingsSystemDefault": "システム設定言語",
+    "settingsTitle": "設定",
+    "settingsLanguage": "言語"
+
 }
