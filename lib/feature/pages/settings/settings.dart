@@ -5,13 +5,25 @@ import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 import '../../../l10n/app_localizations.dart';
 
-typedef langEntry = DropdownMenuEntry<Locale>;
+typedef LangEntry = DropdownMenuEntry<Locale?>;
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
+
+  String _localeName(Locale? locale, BuildContext context) {
+    if(locale == null) {
+      return "System default";
+    } else {
+      return LocaleNames.of(context)!.nameOf(locale.toString()) ?? locale.toString();
+    }
+  }
   
   @override
   Widget build(BuildContext context) {
+    
+    Locale? nullLocale;
+    final List<Locale?> entries = [nullLocale] + AppLocalizations.supportedLocales ;
+
     return Column(
         children: [
           AppBar(
@@ -40,13 +52,13 @@ class SettingsPage extends StatelessWidget {
                     ),
                   ),
                   Expanded(
-                    child: DropdownMenu<Locale>(
+                    child: DropdownMenu<Locale?>(
                       initialSelection: Locale('en'),
-                      dropdownMenuEntries: UnmodifiableListView<langEntry>(
-                        AppLocalizations.supportedLocales.map<langEntry>(
-                          (Locale loc) => langEntry(
+                      dropdownMenuEntries: UnmodifiableListView<LangEntry>(
+                        entries.map<LangEntry>(
+                          (Locale? loc) => LangEntry(
                             value: loc,
-                            label: LocaleNames.of(context)!.nameOf(loc.toString()) ?? loc.toString(),
+                            label: _localeName(loc, context),
                           )
                         )
                       ),
