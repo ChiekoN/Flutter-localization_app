@@ -14,6 +14,7 @@ class UserConfigCubit extends Cubit<UserConfig>{
 
   // Load
   void loadUserConfig() {
+    print(userConfigRepo.getUserConfig());    
     emit(userConfigRepo.getUserConfig());
   }
 

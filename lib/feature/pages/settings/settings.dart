@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:collection/collection.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localized_locales/flutter_localized_locales.dart';
 
 import '../../../l10n/app_localizations.dart';
+import '../../shared/user_config_cubit.dart';
 
 typedef LangEntry = DropdownMenuEntry<Locale?>;
 
@@ -20,7 +21,8 @@ class SettingsPage extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    
+
+    // When MaterialApp.locale is set to null, it uses system locale (system default in the menu).
     Locale? nullLocale;
     final List<Locale?> entries = [nullLocale] + AppLocalizations.supportedLocales ;
 
@@ -53,7 +55,7 @@ class SettingsPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: DropdownMenu<Locale?>(
-                      initialSelection: Locale('en'),
+                      initialSelection: context.watch<UserConfigCubit>().state.locale,
                       dropdownMenuEntries: UnmodifiableListView<LangEntry>(
                         entries.map<LangEntry>(
                           (Locale? loc) => LangEntry(
@@ -62,7 +64,10 @@ class SettingsPage extends StatelessWidget {
                           )
                         )
                       ),
-                    //onSelected: (){},
+                      onSelected: (Locale? loc) {
+                        print("loc: $loc");
+                        context.read<UserConfigCubit>().updateLocale(loc);
+                      },
                     ),
                   ),
                 ],

@@ -5,6 +5,7 @@ import 'package:universal_platform/universal_platform.dart';
 import 'feature/shared/app.dart';
 import 'feature/shared/todate_provider.dart';
 import 'data/repository/data_todate_repo.dart';
+import 'data/repository/data_user_config_repo.dart';
 
 Future setDesktopWindow() async {
   await DesktopWindow.setWindowSize(const Size(412, 983));
@@ -18,7 +19,13 @@ void main() {
   }
   
   final todateRepo = TodateRepoData();
+  final userConfigRepo = UserConfigRepoData();
 
-  runApp(TodateProvider(todateRepo: todateRepo));
+  runApp(
+    TodateProvider(
+      todateRepo: todateRepo,
+      userConfigRepo: userConfigRepo
+    )
+  );
 }
 

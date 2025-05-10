@@ -14,22 +14,27 @@ class UserConfigRepoData implements UserConfigRepo {
 
   @override
   void setUserConfig(UserConfig userConfig) {
-    setLocale(userConfig.locale);
+    config = config.copyWith();
   }
 
   @override
   void setLocale(Locale? locale) {
-    config.locale = locale;
+    if (locale == null) { // system default
+      clearLocale();
+    } else {
+      config = config.copyWith(locale:locale);
+    }
+    print("in updateLocale : $config");
   }
 
   @override
   void clearUserConfig() {
-    clearLocale();
+    config = UserConfig();
   }
 
   @override
   void clearLocale() {
-    config.locale = null;
+    config = config.copyWith(localeNull: true);
   }
 
 }
