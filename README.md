@@ -1,10 +1,111 @@
-# localization_app
+# Flutter: Localization demo app
 
-A new Flutter project.
+This is a Flutter project that demonstorates how to implement localization/internationalization (change the language used in the app as per the user's choice) in Flutter.
 
-## Getting Started
+The original project is [Flutter local storage demo app using Drift](https://github.com/ChiekoN/Flutter-local_storage_app), and I added the following features on top of it:
+ 
+ - *Settings* page was added. It can be opened from Settings icon(<i class="material-icons">settings</i>) on the right side of the app bar.
 
-This project is a starting point for a Flutter application.
+ - In *Settings* page, a user can choose the locale (language) from a dropdown menu. In this app, English and Japanese are available.
+
+
+**NOTE:**
+In this app, the title and the memo area retain what a user inputs just as is. Users can input text by their language and not be translated when they change the locale. 
+
+
+## Key techniques
+
+### 1. Localization/Internationalization
+
+I followed the procedure written in Flutter official documentation:
+ - [Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization)
+
+Packages:
+ - flutter_localizations
+ - [intl](https://pub.dev/packages/intl)
+
+ NOTE: Date string is out of localization yet.
+
+### 2. Settings page
+
+Widgets:
+ - `Dialog` class and `showDialog()` function: [Dialog class](https://api.flutter.dev/flutter/material/Dialog-class.html)
+
+ NOTE: Settings doesn't persist in local storage yet.
+
+
+### 3. State management
+
+The app's locale is set to the `locale` property in `MaterialApp`, which is the root widget of this app. To make the new locale selected in Settings page effective to the whole application, there should be an appropriate state management. Here I used `Bloc(Cubit)`, because of the history of the project and potential for scalability.
+
+Documentation:
+ - [Bloc](https://bloclibrary.dev/)
+
+Package:
+ - [flutter_bloc](https://pub.dev/packages/flutter_bloc)
+
+### 4. Equatable
+
+I created a class (`UserConfig`) that is supposed to manage a user's app setting. At the moment, it has only `locale`, but potentially it could have more properties. And when a class like this is used as **state** to be managed, it has to be compareable. I extended `Equatable` class to create a custom state class.
+
+Package:
+  - [equatable](https://pub.dev/packages/equatable)
+
+
+## Code
+```
+lib
+ ┣ data
+ ┃ ┣ models
+ ┃ ┃ ┣ data_todate.dart
+ ┃ ┃ ┗ data_todate.g.dart
+ ┃ ┗ repository
+ ┃ ┃ ┣ data_todate_repo.dart
+ ┃ ┃ ┗ data_user_config_repo.dart  // Data repository for user settings
+ ┣ domain
+ ┃ ┣ models
+ ┃ ┃ ┣ todate.dart
+ ┃ ┃ ┗ user_config.dart  // Class definition for user settings 
+ ┃ ┗ repository
+ ┃ ┃ ┣ todate_repo.dart
+ ┃ ┃ ┗ user_config_repo.dart   // Repository for user settings 
+ ┣ feature
+ ┃ ┣ pages
+ ┃ ┃ ┣ add
+ ┃ ┃ ┃ ┗ add.dart
+ ┃ ┃ ┣ detail
+ ┃ ┃ ┃ ┣ date_area.dart
+ ┃ ┃ ┃ ┣ detail.dart
+ ┃ ┃ ┃ ┣ history_detail.dart
+ ┃ ┃ ┃ ┗ memo_area.dart
+ ┃ ┃ ┣ history
+ ┃ ┃ ┃ ┗ history.dart
+ ┃ ┃ ┣ settings   // Settings page
+ ┃ ┃ ┃ ┗ settings.dart
+ ┃ ┃ ┗ toplist
+ ┃ ┃ ┃ ┗ toplist.dart
+ ┃ ┗ shared
+ ┃ ┃ ┣ app.dart
+ ┃ ┃ ┣ bottom_navbar.dart
+ ┃ ┃ ┣ router.dart
+ ┃ ┃ ┣ todate_cubit.dart
+ ┃ ┃ ┣ todate_provider.dart
+ ┃ ┃ ┣ todate_rootview.dart
+ ┃ ┃ ┗ user_config_cubit.dart // Cubit for locale state management
+ ┣ l10n  // For localization
+ ┃ ┣ app_en.arb
+ ┃ ┣ app_ja.arb
+ ┃ ┣ app_localizations.dart
+ ┃ ┣ app_localizations_en.dart
+ ┃ ┗ app_localizations_ja.dart
+ ┗ main.dart
+ ```
+
+## Platform
+
+In develpment, I selected Windows app as my target device.
+
+## Flutter resources
 
 A few resources to get you started if this is your first Flutter project:
 

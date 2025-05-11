@@ -95,6 +95,18 @@ abstract class AppLocalizations {
     Locale('ja')
   ];
 
+  /// No description provided for @dateWeekString.
+  ///
+  /// In en, this message translates to:
+  /// **'{date}'**
+  String dateWeekString(DateTime date);
+
+  /// No description provided for @dateWeekStringShort.
+  ///
+  /// In en, this message translates to:
+  /// **'{date}'**
+  String dateWeekStringShort(DateTime date);
+
   /// Title on AppBar in Toplist page
   ///
   /// In en, this message translates to:

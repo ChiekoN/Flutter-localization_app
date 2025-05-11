@@ -1,4 +1,7 @@
 {
+    "dateWeekString": "{date}",
+    "dateWeekStringShort": "{date}",
+    
     "bottomNavbarHomeTitle": "予定の日付一覧",
     "bottomNavbarHistoryTitle": "過去の日付一覧",
     "routerHome": "ホーム",

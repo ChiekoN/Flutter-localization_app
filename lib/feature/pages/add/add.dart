@@ -6,7 +6,6 @@ import '../../shared/router.dart';
 import '../../shared/todate_cubit.dart';
 import '../../../domain/models/todate.dart';
 
-
 import '../../../l10n/app_localizations.dart';
 
 class NewDatePage extends StatefulWidget {
@@ -17,8 +16,8 @@ class NewDatePage extends StatefulWidget {
 }
 
 class _NewDatePageState extends State<NewDatePage> {
-
-  DateTime firstDate = DateTime.now().add(Duration(days:1)); // Available date is tomorrow and after.
+  DateTime firstDate = DateTime.now().subtract(Duration(days:3)); 
+  //DateTime firstDate = DateTime.now().add(Duration(days:1)); // Available date is tomorrow and after.
   DateTime selectedDate = DateTime.now().add(Duration(days:1)); // Initial value
   DateTime lastDate = DateTime(2200); // Max date
   String selectedDateString = '';
@@ -59,7 +58,7 @@ class _NewDatePageState extends State<NewDatePage> {
     if (picked != null && picked != selectedDate){
       setState(() {
         selectedDate = picked;
-        selectedDateString = '${selectedDate.toLocal()}'.split(' ')[0];
+        selectedDateString = AppLocalizations.of(context)!.dateWeekStringShort(selectedDate.toLocal());
       });
       print('selectedDateString = $selectedDateString'); // DEV
     }
