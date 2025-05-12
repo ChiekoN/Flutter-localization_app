@@ -1,25 +1,4 @@
 {
-    "dateWeekString": "{date}",
-    "@dateWeekString": {
-        "placeholders": {
-            "date": {
-                "type": "DateTime",
-                "format": "yMMMEd"
-            }
-        }
-    },
-
-    "dateWeekStringShort": "{date}",
-    "@dateWeekStringShort": {
-        "placeholders": {
-            "date": {
-                "type": "DateTime",
-                "format": "yMEd"
-            }
-        }
-    },
-
-
     "bottomNavbarHomeTitle": "Upcoming dates",
     "@bottomNavbarHomeTitle": {
         "description": "Title on AppBar in Toplist page"
@@ -72,6 +51,10 @@
     "detailMemoTitle": "Memo",
     "@detailMemoTitle": {},
 
+    
+    "historyDetailPastDate": "Past date",
+    "@historyDetailPastDate" : {},
+    
 
     "settingsSystemDefault": "System locale",
     "@settingsSystemDefault": {},

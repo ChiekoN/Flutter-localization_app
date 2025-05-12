@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../domain/models/todate.dart';
+import '../../shared/user_config_cubit.dart';
 import '../../../l10n/app_localizations.dart';
 
 class DateArea extends StatelessWidget {
@@ -25,7 +27,7 @@ class DateArea extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.fromLTRB(0, 0, 0, 32),
             child: Text(
-              AppLocalizations.of(context)!.dateWeekString(todate.date),
+              todate.getDateWeekString(context.read<UserConfigCubit>().state.locale),
               style: Theme.of(context).textTheme.titleLarge!.apply(
                 color: Theme.of(context).primaryColor,
               ),

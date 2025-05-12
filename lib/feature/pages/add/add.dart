@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 
 import '../../shared/router.dart';
 import '../../shared/todate_cubit.dart';
 import '../../../domain/models/todate.dart';
+import '../../shared/user_config_cubit.dart';
 
 import '../../../l10n/app_localizations.dart';
 
@@ -58,7 +60,8 @@ class _NewDatePageState extends State<NewDatePage> {
     if (picked != null && picked != selectedDate){
       setState(() {
         selectedDate = picked;
-        selectedDateString = AppLocalizations.of(context)!.dateWeekStringShort(selectedDate.toLocal());
+        selectedDateString =_getDateString(context, selectedDate);
+        //selectedDateString = AppLocalizations.of(context)!.dateWeekStringShort(selectedDate.toLocal());
       });
       print('selectedDateString = $selectedDateString'); // DEV
     }
@@ -77,6 +80,16 @@ class _NewDatePageState extends State<NewDatePage> {
     context.go(AppRoutes.home);
   }
   
+  String _getDateString(BuildContext context, DateTime date) {
+    Locale? currentLocale = context.read<UserConfigCubit>().state.locale;
+    if(currentLocale == null) {
+      final platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+      return DateFormat.yMEd(platformDispatcher.locale.toString()).format(date);
+    }
+
+    final String localeName = Intl.canonicalizedLocale(currentLocale.toString());
+    return DateFormat.yMEd(localeName).format(date);
+  }
 
   @override
   Widget build(BuildContext context) {

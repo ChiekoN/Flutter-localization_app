@@ -1,7 +1,4 @@
 {
-    "dateWeekString": "{date}",
-    "dateWeekStringShort": "{date}",
-    
     "bottomNavbarHomeTitle": "予定の日付一覧",
     "bottomNavbarHistoryTitle": "過去の日付一覧",
     "routerHome": "ホーム",
@@ -17,6 +14,7 @@
     "addMemoLabel": "メモ",
     "addSaveButton": "保存",
     "detailMemoTitle": "メモ",
+    "historyDetailPastDate": "過去の日付",
     "settingsSystemDefault": "システム設定言語",
     "settingsTitle": "設定",
     "settingsLanguage": "言語"

@@ -6,6 +6,8 @@ import 'package:collection/collection.dart';
 import '../../shared/router.dart';
 import '../../shared/todate_cubit.dart';
 import '../../../domain/models/todate.dart';
+import '../../../l10n/app_localizations.dart';
+
 import 'memo_area.dart';
 import 'date_area.dart';
 
@@ -30,7 +32,7 @@ class HistoryDetailPage extends StatelessWidget {
         if(item != null) {
           children = [
             Text(
-              "Past date",
+              AppLocalizations.of(context)!.historyDetailPastDate,
               style: Theme.of(context).textTheme.titleSmall, 
             ),
             // Date info

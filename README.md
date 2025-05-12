@@ -17,14 +17,27 @@ In this app, the title and the memo area retain what a user inputs just as is. U
 
 ### 1. Localization/Internationalization
 
-I followed the procedure written in Flutter official documentation:
+#### 1-1. Internationalizing labels/messages
+
+In this project, I made this app available in two languages: English and Japanese. Messages and labels can be displayed in English/Japanese based on the user's selection or the device setting. If the language being set on the device is other than English/Japanese, this app automatically selects English as the default language.
+
+To implement internationalization, I followed the procedure written in Flutter official documentation:
  - [Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization)
 
 Packages:
  - flutter_localizations
  - [intl](https://pub.dev/packages/intl)
 
- NOTE: Date string is out of localization yet.
+
+#### 1-2. Date Format
+
+In English, different date formats are used in defferent countries. In American English, it is MM/DD/YY format, while DD/MM/YY format is used in British English (in Australia as well).
+
+In order to handle this, I set app's `Locale` with both *language* and *region* (not `Locale('en')`, but `Locale('en', 'GB')` for example), and used `DateFormat` to format date strings in the appropriate locale.
+
+Documentation:
+- [DateFormat class](https://api.flutter.dev/flutter/intl/DateFormat-class.html)
+
 
 ### 2. Settings page
 

@@ -9,22 +9,6 @@ class AppLocalizationsJa extends AppLocalizations {
   AppLocalizationsJa([String locale = 'ja']) : super(locale);
 
   @override
-  String dateWeekString(DateTime date) {
-    final intl.DateFormat dateDateFormat = intl.DateFormat.yMMMEd(localeName);
-    final String dateString = dateDateFormat.format(date);
-
-    return '$dateString';
-  }
-
-  @override
-  String dateWeekStringShort(DateTime date) {
-    final intl.DateFormat dateDateFormat = intl.DateFormat.yMEd(localeName);
-    final String dateString = dateDateFormat.format(date);
-
-    return '$dateString';
-  }
-
-  @override
   String get bottomNavbarHomeTitle => '予定の日付一覧';
 
   @override
@@ -68,6 +52,9 @@ class AppLocalizationsJa extends AppLocalizations {
 
   @override
   String get detailMemoTitle => 'メモ';
+
+  @override
+  String get historyDetailPastDate => '過去の日付';
 
   @override
   String get settingsSystemDefault => 'システム設定言語';

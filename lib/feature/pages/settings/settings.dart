@@ -24,8 +24,12 @@ class SettingsPage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     // When MaterialApp.locale is set to null, it uses system locale (system default in the menu).
-    Locale? nullLocale;
-    final List<Locale?> entries = [nullLocale] + AppLocalizations.supportedLocales ;
+    final List<Locale?> entries = [
+      null,
+      const Locale('en', 'US'),
+      const Locale('en', 'GB'),
+      const Locale('ja', 'JP'),
+    ];
 
     return BlocBuilder<UserConfigCubit, UserConfig>(
       builder: (context, configState) {
