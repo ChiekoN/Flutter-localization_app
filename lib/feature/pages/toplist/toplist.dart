@@ -10,14 +10,9 @@ import '../../shared/user_config_cubit.dart';
 
 import '../../../l10n/app_localizations.dart';
 
-class TopListPage extends StatefulWidget {
+
+class TopListPage extends StatelessWidget {
   const TopListPage({super.key});
-
-  @override
-  State<TopListPage> createState() => _TopListPageState();
-}
-
-class _TopListPageState extends State<TopListPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +41,7 @@ class _TopListPageState extends State<TopListPage> {
                 ),
               );
             }
-            print("current locale in toplist = ${Localizations.localeOf(context)}");
+            //print("current locale in toplist = ${Localizations.localeOf(context)}");
             return ListView.builder(  
               itemCount: futureTodates.length,
               itemBuilder: (context, index) {

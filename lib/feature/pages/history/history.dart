@@ -11,14 +11,8 @@ import '../../shared/user_config_cubit.dart';
 import '../../../l10n/app_localizations.dart';
 
 
-class HistoryListPage extends StatefulWidget {
+class HistoryListPage extends StatelessWidget {
   const HistoryListPage({super.key});
-
-  @override
-  State<HistoryListPage> createState() => _HistoryListPageState();
-}
-
-class _HistoryListPageState extends State<HistoryListPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +42,7 @@ class _HistoryListPageState extends State<HistoryListPage> {
               );
             }
 
-            print("current locale = ${Localizations.localeOf(context)}");
+            //print("current locale = ${Localizations.localeOf(context)}");
             return ListView.builder(  
               itemCount: futureTodates.length,
               itemBuilder: (context, index) {
@@ -77,7 +71,8 @@ class _HistoryListPageState extends State<HistoryListPage> {
                       style: Theme.of(context).textTheme.titleMedium,         
                     ),
                     subtitle: Text(
-                      AppLocalizations.of(context)!.dateWeekStringShort(item.date),
+                      //AppLocalizations.of(context)!.dateWeekStringShort(item.date),
+                      AppLocalizations.of(context)!.addTitleHint,
                     ),
                     onTap:() {
                       context.go('${AppRoutes.history}/${AppRoutes.historyDetail}/${item.id}');
