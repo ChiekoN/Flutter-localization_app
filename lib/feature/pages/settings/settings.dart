@@ -71,6 +71,7 @@ class SettingsPage extends StatelessWidget {
                       ),
                     ),
                     Expanded(
+                      flex: 2,
                       child: DropdownMenu<Locale?>(
                         initialSelection: configState.locale,
                         dropdownMenuEntries: UnmodifiableListView<LangEntry>(
@@ -83,7 +84,6 @@ class SettingsPage extends StatelessWidget {
                         ),
                         controller: menuController,
                         onSelected: (Locale? loc) {
-                          print("loc: $loc");
                           context.read<UserConfigCubit>().updateLocale(loc);
                           menuController.text = _localeName(loc, context);
                         },
