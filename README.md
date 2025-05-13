@@ -1,13 +1,10 @@
 # Flutter: Localization demo app
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=settings" />
 This is a Flutter project that demonstrates how to implement localization/internationalization (change the language used in the app as per the user's choice) in Flutter.
 
 The original project is [Flutter local storage demo app using Drift](https://github.com/ChiekoN/Flutter-local_storage_app), and I added the following features:
 
- - *Settings* page was added. It opens from Settings icon (<span class="material-symbols-outlined">
-settings
-</span>) on the right side of the app bar.
+ - *Settings* page was added. It opens from Settings icon (![settings](README_resources/icon_settings.svg)) on the right side of the app bar.
 
  - In *Settings* page, a user can choose a locale (language) from a dropdown menu. In this app, English and Japanese are available.
 
