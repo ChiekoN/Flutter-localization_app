@@ -1,17 +1,18 @@
 # Flutter: Localization demo app
 
-This is a Flutter project that demonstorates how to implement localization/internationalization (change the language used in the app as per the user's choice) in Flutter.
+This is a Flutter project that demonstrates how to implement localization/internationalization (change the language used in the app as per the user's choice) in Flutter.
 
-The original project is [Flutter local storage demo app using Drift](https://github.com/ChiekoN/Flutter-local_storage_app), and I added the following features on top of it:
+The original project is [Flutter local storage demo app using Drift](https://github.com/ChiekoN/Flutter-local_storage_app), and I added the following features:
  
- - *Settings* page was added. It can be opened from Settings icon(<i class="material-icons">settings</i>) on the right side of the app bar.
+ - *Settings* page was added. It opens from Settings icon (<i class="material-icons">settings</i>) on the right side of the app bar.
 
- - In *Settings* page, a user can choose the locale (language) from a dropdown menu. In this app, English and Japanese are available.
+ - In *Settings* page, a user can choose a locale (language) from a dropdown menu. In this app, English and Japanese are available.
 
 
 **NOTE:**
 In this app, the title and the memo area retain what a user inputs just as is. Users can input text by their language and not be translated when they change the locale. 
 
+<img src="README_resources/localization_demomovie_square.gif" width="500">
 
 ## Key techniques
 
@@ -19,7 +20,7 @@ In this app, the title and the memo area retain what a user inputs just as is. U
 
 #### 1-1. Internationalizing labels/messages
 
-In this project, I made this app available in two languages: English and Japanese. Messages and labels can be displayed in English/Japanese based on the user's selection or the device setting. If the language being set on the device is other than English/Japanese, this app automatically selects English as the default language.
+In this project, I made this app available in two languages: English and Japanese. Messages and labels can be displayed in English/Japanese based on the user's selection or the device setting. When the language being set on the device is other than English/Japanese, this app automatically selects English as the default language.
 
 To implement internationalization, I followed the procedure written in Flutter official documentation:
  - [Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization)
@@ -31,7 +32,7 @@ Packages:
 
 #### 1-2. Date Format
 
-In English, different date formats are used in defferent countries. In American English, it is MM/DD/YY format, while DD/MM/YY format is used in British English (in Australia as well).
+In English, different date formats are used in different countries. In American English, it is MM/DD/YY format, while DD/MM/YY format is used in British English (in Australia as well).
 
 In order to handle this, I set app's `Locale` with both *language* and *region* (not `Locale('en')`, but `Locale('en', 'GB')` for example), and used `DateFormat` to format date strings in the appropriate locale.
 
@@ -44,7 +45,7 @@ Documentation:
 Widgets:
  - `Dialog` class and `showDialog()` function: [Dialog class](https://api.flutter.dev/flutter/material/Dialog-class.html)
 
- NOTE: Settings doesn't persist in local storage yet.
+ NOTE: Settings doesn't persist in local storage in this project.
 
 
 ### 3. State management
@@ -59,7 +60,7 @@ Package:
 
 ### 4. Equatable
 
-I created a class (`UserConfig`) that is supposed to manage a user's app setting. At the moment, it has only `locale`, but potentially it could have more properties. And when a class like this is used as **state** to be managed, it has to be compareable. I extended `Equatable` class to create a custom state class.
+I created a custom class (`UserConfig`) that is supposed to manage a user's app setting. At the moment, it has only `locale`, but potentially it could have more properties. And when a class like this is used as **state** to be managed, it has to be **equatable**. It means when there are two objects of the class, it has to be possible to compare them and judge if they are equivalent. I extended `Equatable` class to create the custom state class to make it equatable.
 
 Package:
   - [equatable](https://pub.dev/packages/equatable)
@@ -104,7 +105,7 @@ lib
  ┃ ┃ ┣ todate_cubit.dart
  ┃ ┃ ┣ todate_provider.dart
  ┃ ┃ ┣ todate_rootview.dart
- ┃ ┃ ┗ user_config_cubit.dart // Cubit for locale state management
+ ┃ ┃ ┗ user_config_cubit.dart // Cubit for Settings state management
  ┣ l10n  // For localization
  ┃ ┣ app_en.arb
  ┃ ┣ app_ja.arb
@@ -116,7 +117,7 @@ lib
 
 ## Platform
 
-In develpment, I selected Windows app as my target device.
+In development, I selected Windows app as my target device.
 
 ## Flutter resources
 
