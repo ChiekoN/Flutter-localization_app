@@ -66,6 +66,45 @@ Package:
   - [equatable](https://pub.dev/packages/equatable)
 
 
+
+
+## How to implement internationalization
+
+I briefly summarise the procedure of internationalization below. For details, see [Flutter official documentation: Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization).
+
+
+1. Add necessary packages: `flutter_localizations` and `intl`
+
+2. Add *"generate: true"* under *"flutter:"* in `pubspec.yaml`:
+  ```
+  flutter:
+    generate: true
+  ```
+
+3. Create `l10n.yaml` file under the project root directory. Write as following. (You can add more options. See the official doc.)
+  ```
+  arb-dir: lib/l10n
+  template-arb-file: app_en.arb
+  output-localization-file: app_localizations.dart
+  ```
+
+4. Under `lib/` in the project directory, create `l10n/` directory.
+    This is the place for ARB files.
+
+    - Create `app_en.arb` file and define Englisn messages
+    - Create `app_ja.arb` file and define Japanese messages that should correspond to English messages
+
+5. run `flutter pub get`. 
+
+    This creates `app_localizations.dart` file (as well as `app_localizations_en.dart` and `app_localizations_ja.dart`) in  `lib/l10n/`. 
+
+6. In source code, 
+    - Import `app_localizations.dart` file created in step 5.
+    - Use `AppLocalizations.of(context)!.<message key>` for a message string
+
+7. When you add or update messages in ARB files, you need to do step 5 again (and step 6 for new messages).
+
+
 ## Code
 ```
 lib
