@@ -10,7 +10,7 @@ The original project is [Flutter local storage demo app using Drift](https://git
 
 
 **NOTE:**
-In this app, the title and the memo area retain what a user inputs just as is. Users can input text by their language and not be translated when they change the locale. 
+In this app, the title and the memo area retain what users input just as being input. Users can enter text in their language, and it won't be translated when they change the locale.
 
 <img src="README_resources/localization_demomovie_square.gif" width="500">
 
