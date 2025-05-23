@@ -58,11 +58,9 @@ class SettingsPage extends StatelessWidget {
               ),
             ),
 
-            //SizedBox(height: 16, width: double.infinity),
             Padding(
               padding: const EdgeInsets.all(32.0),
               child: Row(
-                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Expanded(
                       child: Text(
@@ -92,14 +90,6 @@ class SettingsPage extends StatelessWidget {
                   ],
               ),
             ),
-            /*
-            TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text('Back'),
-            )
-            */
           ],
         );
       }

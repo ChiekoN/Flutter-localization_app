@@ -84,10 +84,14 @@ class _NewDatePageState extends State<NewDatePage> {
     Locale? currentLocale = context.read<UserConfigCubit>().state.locale;
     if(currentLocale == null) {
       final platformDispatcher = WidgetsBinding.instance.platformDispatcher;
+      print("platformDispatcher.locale.toString(): ${platformDispatcher.locale.toString()}");
+      print("canoncalized platformDispatcher.locale.toString(): ${Intl.canonicalizedLocale(platformDispatcher.locale.toString())}");
       return DateFormat.yMEd(platformDispatcher.locale.toString()).format(date);
     }
 
     final String localeName = Intl.canonicalizedLocale(currentLocale.toString());
+    print("locale.toString(): ${currentLocale.toString()}");
+    print("canonicalized locale: $localeName");
     return DateFormat.yMEd(localeName).format(date);
   }
 

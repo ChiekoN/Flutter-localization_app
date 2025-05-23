@@ -38,7 +38,6 @@ class TopListPage extends StatelessWidget {
             ),
           );
         }
-        //print("current locale in toplist = ${Localizations.localeOf(context)}");
         return ListView.builder(  
           itemCount: futureTodates.length,
           itemBuilder: (context, index) {

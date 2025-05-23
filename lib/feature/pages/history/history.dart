@@ -39,8 +39,6 @@ class HistoryListPage extends StatelessWidget {
             ),
           );
         }
-
-        //print("current locale = ${Localizations.localeOf(context)}");
         return ListView.builder(  
           itemCount: futureTodates.length,
           itemBuilder: (context, index) {

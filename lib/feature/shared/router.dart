@@ -6,7 +6,6 @@ import '../pages/add/add.dart';
 import '../pages/detail/detail.dart';
 import '../pages/history/history.dart';
 import '../pages/detail/history_detail.dart';
-import '../pages/settings/settings.dart';
 import 'bottom_navbar.dart';
 
 
@@ -16,7 +15,6 @@ class AppRoutes {
   static const detail = 'detail';
   static const history = '/history';
   static const historyDetail = 'history_detail';
-  static const settings = '/settings';
 }
 
 final List<NavigationDestinationRoute> destinations = [
@@ -89,13 +87,6 @@ final appRouter = GoRouter(
           ),
         ),
       ],
-    ),
-    GoRoute(
-      path: AppRoutes.settings,
-      pageBuilder: (context, state) => NoTransitionPage(
-        child: SettingsPage(
-        ),
-      ),
     ),
   ],
 );

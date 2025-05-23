@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../domain/models/todate.dart';
 import '../../shared/user_config_cubit.dart';
-import '../../../l10n/app_localizations.dart';
 
 class DateArea extends StatelessWidget {
   const DateArea({super.key, required this.todate});

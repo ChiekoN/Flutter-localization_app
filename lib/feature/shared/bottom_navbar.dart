@@ -36,23 +36,19 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           pageTitle,
-          //style: Theme.of(context).textTheme.headlineLarge, 
         ),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed:
-              //context.go(AppRoutes.settings);
               () => showDialog(
                 context: context,
                 builder:
                   (BuildContext context) => Dialog.fullscreen(
                     insetAnimationDuration: Duration(milliseconds: 1000),
                     child: SettingsPage(),
-                    
                   ),
               ),
-            
           )
         ]
       ),
@@ -62,7 +58,6 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
         destinations: destinations.map(
           (dest) => NavigationDestination(
             icon: dest.icon, 
-            // label: dest.label
             label: pageLabel(dest.label, context),
           )
         ).toList(),

@@ -22,12 +22,12 @@ class Todate {
   String getDateWeekStringShort(Locale? locale) {
     if (locale == null) { // System default
       final platformDispatcher = WidgetsBinding.instance.platformDispatcher;
-      print("system locale = ${platformDispatcher.locale.toString()}");
+      //print("system locale = ${platformDispatcher.locale.toString()}");
       return DateFormat.yMEd(platformDispatcher.locale.toString()).format(date);
     }
     
     final String localeName = Intl.canonicalizedLocale(locale.toString());
-    print("locale.toString = ${locale.toString()}, canonicalized locale = $localeName");
+    //print("locale.toString = ${locale.toString()}, canonicalized locale = $localeName");
     return DateFormat.yMEd(localeName).format(date);
   }
 
